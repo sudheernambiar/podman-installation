@@ -16,7 +16,8 @@ Rootless container run.
 - Rhel 8.x /CentOS 8.x /Rocky 8.x /Alma 8.x version with active SELinux and Firewalld running.
 - A normal user with “sudo” permission. (Can remove the user from the ‘sudoers’).
 - Need to open certain ports as per requirements of container exposed ports.
-- Access to internet seemless. (Can remove after the installation)
+- Access to internet seemless. (Can remove after the installation).
+- Firewall permission to be enabled. 
 
 ## Installation
 ### Prepare with installation file and execute - This will install podman and podman-compose executables.
