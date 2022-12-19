@@ -115,8 +115,9 @@ Created symlink /etc/systemd/system/local-fs.target.wants/tmp.mount → /usr/lib
 
 ```
 ### Sample nginx run
+
 '''
-$ podman run -itd -p 8080:80 --name webserver nginx
+podman run -itd -p 8080:80 --name webserver nginx
 Resolving "nginx" using unqualified-search registries (/etc/containers/registries.conf)
 Trying to pull docker.io/library/nginx:latest...
 Getting image source signatures
@@ -131,7 +132,9 @@ Writing manifest to image destination
 Storing signatures
 926f8a64858e1b757139720f766ee13519da41b799b98d538f07eed159857f6f
 '''
+
 ### Enable service at boot as a normal user.
+
 Make sure the container is running,
 '''
 $ podman ps
