@@ -1,4 +1,4 @@
-# Podman installation and configurations
+# podman, podman-compose installation (rootless) and sample service creation(for auto start after reboot)
 <img width="827" alt="podman" src="https://user-images.githubusercontent.com/97512751/208331173-e78cc588-da1e-428e-8d28-ebedaba15f1a.png">
 Docker uses a client-server architecture. Daemon runs behind the scenes where docker-cli provides instructions to docker engine. 
 
