@@ -156,13 +156,13 @@ $ mkdir -p .config/systemd/user
 
 Rename the name as per your naming convention and move the service file to the directory.
 $mv -v /home/ck/container-926f8a64858e1b757139720f766ee13519da41b799b98d538f07eed159857f6f.service   .config/systemd/user/webserver.service
-$
 ```
 Enable the service on reboot and make it a enabled user service.
 ```
 $source .bashrc
 $systemctl --user daemon-reload
-$systemctl enable --user webserver.service
+$ systemctl enable --user webserver.service
+Created symlink /home/ck/.config/systemd/user/default.target.wants/webserver.service → /home/ck/.config/systemd/user/webserver.service.
 ```
 Make a reboot and you can see the service is actively running.
 
