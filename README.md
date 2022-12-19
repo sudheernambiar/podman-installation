@@ -12,7 +12,7 @@ Objective of this process is to install podman and podman-compose. This will als
 Rootless container run.
 
 ## Prerequisites 
-- Rhel 8.x /CentOS 8.x /Rocky 8.x /Alma 8.x version.
+- Rhel 8.x /CentOS 8.x /Rocky 8.x /Alma 8.x version with active SELinux and Firewalld running.
 - A normal user with “sudo” permission. (Can remove the user from the ‘sudoers’).
 - Need to open certain ports as per requirements of container exposed ports.
 - Access to internet seemless. (Can remove after the installation)
@@ -160,4 +160,8 @@ $systemctl enable --user webserver.service
 Make a reboot and you can see the service is actively running.
 
 ## Post installation
-Service file creation is required when there is a container need to keep it active for all the time. Restart policys also can be used. Except the restart makes it kill and that can be avoided by making it as a service.
+* Service file creation is required when there is a container need to keep it active for all the time. Restart policys also can be used. Except the restart makes it kill and that can be avoided by making it as a service.
+* Firewall need to be opened as sudo user or root user. 
+Firewalld sample,
+$sudo firewall-cmd --permanent --add-port=8080/tcp
+$sudo firewall-cmd --reload
