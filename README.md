@@ -156,12 +156,13 @@ $ mkdir -p .config/systemd/user
 
 Rename the name as per your naming convention and move the service file to the directory.
 $mv -v /home/ck/container-926f8a64858e1b757139720f766ee13519da41b799b98d538f07eed159857f6f.service   .config/systemd/user/webserver.service
+Renamed /home/ck/container-926f8a64858e1b757139720f766ee13519da41b799b98d538f07eed159857f6f.service -> .config/systemd/user/webserver.service
 ```
 Enable the service on reboot and make it a enabled user service.
 ```
 $source .bashrc
 $systemctl --user daemon-reload
-$ systemctl enable --user webserver.service
+$systemctl enable --user webserver.service
 Created symlink /home/ck/.config/systemd/user/default.target.wants/webserver.service → /home/ck/.config/systemd/user/webserver.service.
 ```
 Make a reboot and you can see the service is actively running.
@@ -169,7 +170,7 @@ Make a reboot and you can see the service is actively running.
 ## Post installation
 * Service file creation is required when there is a container need to keep it active for all the time. Restart policys also can be used. Except the restart makes it kill and that can be avoided by making it as a service.
 * Firewall need to be opened as sudo user or root user. 
-
+  
 Firewalld sample
 ```
 $sudo firewall-cmd --permanent --add-port=8080/tcp
