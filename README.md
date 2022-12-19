@@ -116,7 +116,7 @@ Created symlink /etc/systemd/system/local-fs.target.wants/tmp.mount → /usr/lib
 ```
 ### Sample nginx run
 
-'''
+```
 podman run -itd -p 8080:80 --name webserver nginx
 Resolving "nginx" using unqualified-search registries (/etc/containers/registries.conf)
 Trying to pull docker.io/library/nginx:latest...
@@ -131,35 +131,37 @@ Copying config 3964ce7b84 done
 Writing manifest to image destination
 Storing signatures
 926f8a64858e1b757139720f766ee13519da41b799b98d538f07eed159857f6f
-'''
+```
 
 ### Enable service at boot as a normal user.
 
 Make sure the container is running,
-'''
+```
 $ podman ps
 CONTAINER ID  IMAGE                           COMMAND               CREATED         STATUS             PORTS                 NAMES
 926f8a64858e  docker.io/library/nginx:latest  nginx -g daemon o...  21 seconds ago  Up 21 seconds ago  0.0.0.0:8080->80/tcp  webserver
-'''
+```
 
 Generate service file
-'''
+```
 $ podman generate systemd --new webserver -f
 /home/ck/container-926f8a64858e1b757139720f766ee13519da41b799b98d538f07eed159857f6f.service
-'''
+```
 
-Create user service directory. 
+Create user service directory.
+```
 $ mkdir -p .config/systemd/user
 
 Rename the name as per your naming convention and move the service file to the directory.
 $mv -v /home/ck/container-926f8a64858e1b757139720f766ee13519da41b799b98d538f07eed159857f6f.service   .config/systemd/user/webserver.service
 $
-
+```
 Enable the service on reboot and make it a enabled user service.
+```
 $source .bashrc
 $systemctl --user daemon-reload
 $systemctl enable --user webserver.service
-
+```
 Make a reboot and you can see the service is actively running.
 
 ## Post installation
@@ -167,8 +169,7 @@ Make a reboot and you can see the service is actively running.
 * Firewall need to be opened as sudo user or root user. 
 
 Firewalld sample
-
-$ sudo firewall-cmd --permanent --add-port=8080/tcp
-
-
-$ sudo firewall-cmd --reload
+```
+$sudo firewall-cmd --permanent --add-port=8080/tcp
+$sudo firewall-cmd --reload
+```
