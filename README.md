@@ -166,4 +166,6 @@ Make a reboot and you can see the service is actively running.
 Firewalld sample
 
 $sudo firewall-cmd --permanent --add-port=8080/tcp
+
+
 $sudo firewall-cmd --reload
