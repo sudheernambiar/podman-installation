@@ -162,6 +162,10 @@ Make a reboot and you can see the service is actively running.
 ## Post installation
 * Service file creation is required when there is a container need to keep it active for all the time. Restart policys also can be used. Except the restart makes it kill and that can be avoided by making it as a service.
 * Firewall need to be opened as sudo user or root user. 
+
+
 Firewalld sample,
+'''
 $sudo firewall-cmd --permanent --add-port=8080/tcp
 $sudo firewall-cmd --reload
+'''
