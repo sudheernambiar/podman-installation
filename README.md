@@ -1,5 +1,5 @@
 # Podman installation and configurations
-![alt text](podman.png)
+<img width="827" alt="podman" src="https://user-images.githubusercontent.com/97512751/208331173-e78cc588-da1e-428e-8d28-ebedaba15f1a.png">
 Docker uses a client-server architecture. Daemon runs behind the scenes where docker-cli provides instructions to docker engine. 
 
 Podman uses a single process architecture, due to this pods, images are smaller in size, it can avoid security issues due to multi-process architecture such as sharing PID namespaces with other containers, privilege escalation(docker uses root privileges behind the scenes) attacks and limited user provisioning with related to well-known ports or even ports in general. 
